@@ -1,0 +1,1030 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 0,
+        "name": "14th Star Brewing",
+        "address": "41 Lower Newton Street",
+        "city": "St Albans",
+        "state": "VT",
+        "zip": "05478",
+        "selector": "fourteenthstar",
+        "url": "http://www.14thstarbrewing.com/",
+        "phone": "802.393.1459",
+        "facebook": "https://www.facebook.com/14thstarbrewing",
+        "twitter": "",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.085206,
+          44.820179
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1,
+        "name": "The Alchemist",
+        "address": "35 Crossroad",
+        "city": "Waterbury",
+        "state": "VT",
+        "zip": "05676",
+        "selector": "alchemist",
+        "url": "http://www.alchemistbeer.com",
+        "phone": "802.244.7744",
+        "facebook": "https://www.facebook.com/alchemistbeer",
+        "twitter": "http://twitter.com/alchemistbeer",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.743821,
+          44.350471
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2,
+        "name": "Backacre Beermakers",
+        "address": "",
+        "city": "Weston",
+        "state": "VT",
+        "zip": "05161",
+        "selector": "backacrebeer",
+        "url": "http://www.backacrebeermakers.com/",
+        "phone": "",
+        "facebook": "",
+        "twitter": "",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.7833333,
+          43.3
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3,
+        "name": "Bobcat Cafe and Brewery",
+        "address": "5 Main Street",
+        "city": "Bristol",
+        "state": "VT",
+        "zip": "05443",
+        "selector": "bobcat",
+        "url": "http://www.thebobcatcafe.com/",
+        "phone": "802.453.3311",
+        "facebook": "https://www.facebook.com/bobcatcafe",
+        "twitter": "",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.0782909,
+          44.132926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 4,
+        "name": "Covered Bridge Craft Brewery",
+        "address": "30 Sleepy Hollow Lane",
+        "city": "Lyndonville",
+        "state": "VT",
+        "zip": "05851",
+        "selector": "coveredbridge",
+        "url": "http://www.coveredbridgebrew.com/",
+        "phone": "",
+        "facebook": "https://www.facebook.com/pages/Covered-Bridge-Brewing/125177654161845",
+        "twitter": "",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.998649,
+          44.525937
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 5,
+        "name": "Idletyme Brewing Co",
+        "address": "1859 Mountain Road",
+        "city": "Stowe",
+        "state": "VT",
+        "zip": "05672",
+        "selector": "idletyme",
+        "url": "http://idletymebrewing.com/",
+        "phone": "802.253.4765",
+        "facebook": "https://www.facebook.com/idletyme",
+        "twitter": "",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.713977,
+          44.473824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6,
+        "name": "Drop-In Brewing Company",
+        "address": "610 Route 7 South",
+        "city": "Middlebury",
+        "state": "VT",
+        "zip": "05753",
+        "selector": "dropin",
+        "url": "http://www.dropinbeer.com/",
+        "phone": "802.989.7414",
+        "facebook": "https://www.facebook.com/dropinbrewing",
+        "twitter": "https://twitter.com/#!/dropinbeer",
+        "googleplus": "",
+        "instagram": "https://www.instagram.com/dropinbeer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.1487354,
+          43.9999812
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7,
+        "name": "Fiddlehead Brewing Company",
+        "address": "6305 Shelburne Road",
+        "city": "Shelburne",
+        "state": "VT",
+        "zip": "05482",
+        "selector": "fiddlehead",
+        "url": "http://www.fiddleheadbrewing.com/",
+        "phone": "802.399.2994",
+        "facebook": "https://www.facebook.com/pages/Fiddlehead-Brewing-Company/152040331527610",
+        "twitter": "https://twitter.com/fiddleheadbrew",
+        "googleplus": "",
+        "instagram": "https://www.instagram.com/FiddleheadBrewing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.232674,
+          44.366199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 8,
+        "name": "Foley Brothers Brewing",
+        "address": "79 Stone Mill Dam Road",
+        "city": "Brandon",
+        "state": "VT",
+        "zip": "05733",
+        "selector": "foleybrothers",
+        "url": "",
+        "phone": "802.247.8002",
+        "facebook": "https://www.facebook.com/FoleyBrothersBrewing",
+        "twitter": "https://twitter.com/Foleybrewingvt",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.0765,
+          43.810501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 10,
+        "name": "Harpoon Brewery",
+        "address": "336 Ruth Carney Drive",
+        "city": "Windsor",
+        "state": "VT",
+        "zip": "05089",
+        "selector": "harpoon",
+        "url": "http://www.harpoonbrewery.com/",
+        "phone": "802.674.5491",
+        "facebook": "https://www.facebook.com/TheHarpoonBrewery",
+        "twitter": "http://www.twitter.com/harpoon_brewery",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.401527,
+          43.512997
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 11,
+        "name": "Hill Farmstead Brewery",
+        "address": "403 Hill Road",
+        "city": "Greensboro Bend",
+        "state": "VT",
+        "zip": "05842",
+        "selector": "hillfarmstead",
+        "url": "http://www.hillfarmstead.com/",
+        "phone": "802.533.7450",
+        "facebook": "https://www.facebook.com/hillfarmstead",
+        "twitter": "https://twitter.com/HillFarmstead",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.2623024,
+          44.6072147
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 12,
+        "name": "Kingdom Brewing",
+        "address": "353 Coburn Hill Road",
+        "city": "Newport",
+        "state": "VT",
+        "zip": "05855",
+        "selector": "kingdombrewing",
+        "url": "https://kingdombrewingvt.com/",
+        "phone": "802.334.7096",
+        "facebook": "https://www.facebook.com/brewing.kingdom",
+        "twitter": "https://twitter.com/KBrewing",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.2809754,
+          44.9315999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13,
+        "name": "Lawsons Finest",
+        "address": "284 Main Street",
+        "city": "Warren",
+        "state": "VT",
+        "zip": "05674",
+        "selector": "lawsons",
+        "url": "http://www.lawsonsfinest.com/",
+        "phone": "802.272.8436",
+        "facebook": "",
+        "twitter": "",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.8562039,
+          44.112026
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 14,
+        "name": "Long Trail Brewing",
+        "address": "5520 Route 4",
+        "city": "Bridgewaters Corners",
+        "state": "VT",
+        "zip": "05035",
+        "selector": "longtrail",
+        "url": "http://www.longtrail.com/",
+        "phone": "802.672.5011",
+        "facebook": "https://www.facebook.com/pages/Long-Trail-Brewing/142163634919",
+        "twitter": "https://twitter.com/LongTrailBrwing",
+        "googleplus": "",
+        "instagram": "https://www.instagram.com/longtrailbeer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.658913,
+          43.58866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 15,
+        "name": "Lost Nation Brewing",
+        "address": "254 Wilkins Street",
+        "city": "Morrisville",
+        "state": "VT",
+        "zip": "05661",
+        "selector": "lostnationbrewing",
+        "url": "http://lostnationbrewing.com/",
+        "phone": "802.851.8041",
+        "facebook": "http://www.facebook.com/pages/Lost-Nation-Brewing/168436043305981",
+        "twitter": "https://twitter.com/LostNationBrew",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.603439,
+          44.569263
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 16,
+        "name": "Madison Brewing",
+        "address": "428 Main Street",
+        "city": "Bennington",
+        "state": "VT",
+        "zip": "05201",
+        "selector": "madison",
+        "url": "http://www.madisonbrewingco.com/",
+        "phone": "802.442.7397",
+        "facebook": "",
+        "twitter": "",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.196419,
+          42.8783839
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 17,
+        "name": "Magic Hat Brewing Company",
+        "address": "5 Bartlett Bay Road",
+        "city": "South Burlington",
+        "state": "VT",
+        "zip": "05403",
+        "selector": "magichat",
+        "url": "http://www.magichat.net/",
+        "phone": "802.658.2739",
+        "facebook": "https://www.facebook.com/magichatbrewing",
+        "twitter": "https://twitter.com/magichat",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.213148,
+          44.428405
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 18,
+        "name": "McNeills Pub and Brewery",
+        "address": "90 Elliot Street",
+        "city": "Brattleboro",
+        "state": "VT",
+        "zip": "05301",
+        "selector": "mcneills",
+        "url": "http://www.mcneillsbrewery.com/",
+        "phone": "802.254.2553",
+        "facebook": "https://www.facebook.com/McNeillsBrewery",
+        "twitter": "https://twitter.com/hereforthebeer",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.560164,
+          42.851552
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 19,
+        "name": "Northshire Brewery",
+        "address": "108 County Street",
+        "city": "Bennington",
+        "state": "VT",
+        "zip": "05201",
+        "selector": "northshire",
+        "url": "http://www.northshirebrewery.com/",
+        "phone": "802.681.0201",
+        "facebook": "https://www.facebook.com/NorthshireBrewery",
+        "twitter": "https://twitter.com/northshirebrew",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.2011993,
+          42.844954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 20,
+        "name": "Norwich Inn",
+        "address": "325 Main Street",
+        "city": "Norwich",
+        "state": "VT",
+        "zip": "05055",
+        "selector": "norwichinn",
+        "url": "http://www.norwichinn.com/",
+        "phone": "802.649.1143",
+        "facebook": "https://www.facebook.com/pages/Norwich-Inn-Norwich-Vt/98695894945",
+        "twitter": "https://twitter.com/norwichinn",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.308907,
+          43.7151179
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 21,
+        "name": "Otter Creek Brewing",
+        "address": "793 Exchange Street",
+        "city": "Middlebury",
+        "state": "VT",
+        "zip": "05753",
+        "selector": "ottercreek",
+        "url": "http://www.ottercreekbrewing.com/",
+        "phone": "802.388.0727",
+        "facebook": "https://www.facebook.com/pages/Otter-Creek-Brewery/137425442977971",
+        "twitter": "https://twitter.com/OtterCreekBrew",
+        "googleplus": "",
+        "instagram": "https://www.instagram.com/ottercreekbeer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.169251,
+          44.019665
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 22,
+        "name": "Rock Art Brewery",
+        "address": "632 Laport Road",
+        "city": "Morrisville",
+        "state": "VT",
+        "zip": "05661",
+        "selector": "rockart",
+        "url": "http://www.rockartbrewery.com/",
+        "phone": "802.888.9400",
+        "facebook": "https://www.facebook.com/pages/Rock-Art-Brewery/98108048941",
+        "twitter": "https://twitter.com/rockartbrewery",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.608794,
+          44.558011
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 23,
+        "name": "Switchback Brewing",
+        "address": "160 Flynn Avenue",
+        "city": "Burlington",
+        "state": "VT",
+        "zip": "05401",
+        "selector": "switchback",
+        "url": "http://switchbackvt.com/",
+        "phone": "802.651.4114",
+        "facebook": "https://www.facebook.com/SwitchbackBrewingCompany",
+        "twitter": "",
+        "googleplus": "https://plus.google.com/100869900531801925081/about?gl=us&hl=en",
+        "instagram": "https://www.instagram.com/switchbackbeer/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.220686,
+          44.456184
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 24,
+        "name": "Trapp Family Lodge",
+        "address": "700 Trapp Hill Road",
+        "city": "Stowe",
+        "state": "VT",
+        "zip": "05672",
+        "selector": "trappfamily",
+        "url": "http://www.trappfamily.com/amenities/dining/brewery",
+        "phone": "802.253.8512",
+        "facebook": "https://www.facebook.com/TrappFamilyLodge?group_id=0",
+        "twitter": "https://twitter.com/trappfamily",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.744066,
+          44.465572
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 26,
+        "name": "Whetstone Station",
+        "address": "36 Bridge Street",
+        "city": "Brattleboro",
+        "state": "VT",
+        "zip": "05301",
+        "selector": "whetstonestation",
+        "url": "http://www.whetstonestation.com/",
+        "phone": "802.490.2354",
+        "facebook": "http://www.facebook.com/whetstonestation",
+        "twitter": "http://www.twitter.com/whetstonebeer",
+        "googleplus": "https://plus.google.com/113100977153373615113",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.5565434,
+          42.8515937
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 27,
+        "name": "Vermont Pub and Brewery",
+        "address": "144 College Street",
+        "city": "Burlington",
+        "state": "VT",
+        "zip": "05401",
+        "selector": "vpb",
+        "url": "http://www.vermontbrewery.com/",
+        "phone": "802.865.0500",
+        "facebook": "https://www.facebook.com/VermontPubandBrewery",
+        "twitter": "",
+        "googleplus": "",
+        "instagram": "https://www.instagram.com/VTPubandBrew/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.214394,
+          44.477262
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 28,
+        "name": "Zero Gravity Craft Brewery",
+        "address": "115 St. Paul Street",
+        "city": "Burlington",
+        "state": "VT",
+        "zip": "05401",
+        "selector": "zerogravity",
+        "url": "http://www.zerogravitybeer.com/",
+        "phone": "802.861.2999",
+        "facebook": "https://www.facebook.com/pages/Zero-Gravity-Craft-Brewery/332441423441087",
+        "twitter": "https://twitter.com/zerogravitybeer",
+        "googleplus": "",
+        "instagram": "https://www.instagram.com/Zerogravitybeer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.214154,
+          44.476553
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "",
+        "name": "Stone Corral Brewery",
+        "address": "83 Huntington Road",
+        "city": "Richmond",
+        "state": "VT",
+        "zip": "05477",
+        "selector": "stonecorral",
+        "url": "http://www.stonecorral.com/",
+        "phone": "802.434.5787",
+        "facebook": "https://www.facebook.com/stonecorralbrewery",
+        "twitter": "",
+        "googleplus": "https://plus.google.com/115438243512334076874/about?hl=en",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.0015183,
+          44.398887
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "",
+        "name": "First Republic Brewing Company",
+        "address": "39 River Road, Suite 6",
+        "city": "Essex Junction",
+        "state": "VT",
+        "zip": "05452",
+        "selector": "firstrepublic",
+        "url": "http://www.1strepublicbrewingco.com/",
+        "phone": "802.857.5318",
+        "facebook": "https://www.facebook.com/1stRepublicBrewingCo/timeline",
+        "twitter": "",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.0844929,
+          44.4837305
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "",
+        "name": "Burlington Beer Company",
+        "address": "25 Omega Drive, Suite 150",
+        "city": "Williston",
+        "state": "VT",
+        "zip": "05495",
+        "selector": "burlington",
+        "url": "http://www.burlingtonbeercompany.com/",
+        "phone": "802.863.2337",
+        "facebook": "https://www.facebook.com/burlingtonbeer",
+        "twitter": "https://twitter.com/BurlingtonBeer",
+        "googleplus": "https://plus.google.com/108562682292716116095/about?hl=en",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.126007,
+          44.44783
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "",
+        "name": "Prohibition Pig",
+        "address": "23 South Main Street",
+        "city": "Waterbury",
+        "state": "VT",
+        "zip": "05676",
+        "selector": "propig",
+        "url": "http://www.prohibitionpig.com",
+        "phone": "802.244.4120",
+        "facebook": "https://www.facebook.com/prohibitionpig",
+        "twitter": "https://twitter.com/ProhibitionPig",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.7560293,
+          44.3371855
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "",
+        "name": "Four Quarters Brewing",
+        "address": "150 West Canal Street",
+        "city": "Winooski",
+        "state": "VT",
+        "zip": "05404",
+        "selector": "fourquarters",
+        "url": "http://www.fourquartersbrewing.com/",
+        "phone": "802.862.0775",
+        "facebook": "https://www.facebook.com/FourQuartersBrewing",
+        "twitter": "http://www.twitter.com/4quartersbrew",
+        "googleplus": "https://plus.google.com/109969977542498061735/about",
+        "instagram": "https://www.instagram.com/4quartersbrew"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.192018,
+          44.490157
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "",
+        "name": "Queen City Brewing Company",
+        "address": "703B Pine Street",
+        "city": "Burlington",
+        "state": "VT",
+        "zip": "05401",
+        "selector": "queencity",
+        "url": "http://queencitybrewery.com/",
+        "phone": "802.540.0280",
+        "facebook": "http://www.facebook.com/QueenCityBrewery",
+        "twitter": "https://twitter.com/QueenCtyBrewery",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.2150952,
+          44.4594923
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "",
+        "name": "Hop'n Moose Brewing Co.",
+        "address": "41 Center Street",
+        "city": "Rutland",
+        "state": "VT",
+        "zip": "05701",
+        "selector": "hopnmoose",
+        "url": "http://www.hopnmoose.com/",
+        "phone": "802.775.7063",
+        "facebook": "https://www.facebook.com/hopn.moose",
+        "twitter": "https://twitter.com/HopnMoose",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.9775604,
+          43.6067008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "",
+        "name": "Bent Hill Brewery",
+        "address": "1972 Bent Hill Road",
+        "city": "Braintree Hill",
+        "state": "VT",
+        "zip": "05060",
+        "selector": "benthill",
+        "url": "http://www.benthillbrewery.com/",
+        "phone": "802.249.1125",
+        "facebook": "https://www.facebook.com/BentHillBrewery",
+        "twitter": "https://twitter.com/BentHillBrewery",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.720955,
+          43.98138
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "",
+        "name": "Simple Roots Brewing",
+        "address": "New North End",
+        "city": "Burlington",
+        "state": "VT",
+        "zip": "05408-2544",
+        "selector": "simpleroots",
+        "url": "http://www.simplerootsbrewing.com/",
+        "phone": "",
+        "facebook": "https://www.facebook.com/pages/Simple-Roots-Brewing/1405276053058250",
+        "twitter": "http://twitter.com/simplerootsbrew",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.212072,
+          44.4758825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "",
+        "name": "Hermit Thrush Brewery",
+        "address": "29 High Street, Suite 101C",
+        "city": "Brattleboro",
+        "state": "VT",
+        "zip": "05301",
+        "selector": "hermitthrush",
+        "url": "http://www.hermitthrushbrewery.com/",
+        "phone": "802.257.BEER",
+        "facebook": "https://www.facebook.com/HermitThrushBrewery?ref=hl",
+        "twitter": "https://twitter.com/BrattleBeer",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.5596126,
+          42.8534875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "",
+        "name": "Frost Beer Works",
+        "address": "171 Commerce Street",
+        "city": "Hinesburg",
+        "state": "VT",
+        "zip": "05461",
+        "selector": "frostbeer",
+        "url": "http://www.frostbeerworks.com/",
+        "phone": "949.945.4064",
+        "facebook": "",
+        "twitter": "",
+        "googleplus": "",
+        "instagram": "https://www.instagram.com/frost.beer.works"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.108999,
+          44.335381
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "",
+        "name": "J'Ville Brewery",
+        "address": "201 Route 112",
+        "city": "Jacksonville",
+        "state": "VT",
+        "zip": "05342",
+        "selector": "jville",
+        "url": "http://www.jvillebrewery.com/",
+        "phone": "802.368.2226",
+        "facebook": "https://www.facebook.com/jvillebrewery",
+        "twitter": "",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.819907,
+          42.794545
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "",
+        "name": "Goodwater Brewery",
+        "address": "740 Marshall Avenue",
+        "city": "Williston",
+        "state": "VT",
+        "zip": "05495",
+        "selector": "goodwater",
+        "url": "http://www.goodwaterbreweryvt.com/",
+        "phone": "802.999.7396",
+        "facebook": "https://www.facebook.com/Good-Water-Brewery-353993028073567/",
+        "twitter": "",
+        "googleplus": "",
+        "instagram": "https://www.instagram.com/goodwaterbrewing/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.1266156,
+          44.4455598
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "",
+        "name": "Brewster River Pub and Brewery",
+        "address": "4087 Route 108 South",
+        "city": "Jeffersonville",
+        "state": "VT",
+        "zip": "05464",
+        "selector": "brewsterriver",
+        "url": "http://www.brewsterriverpubnbrewery.com/",
+        "phone": "802.644.6366",
+        "facebook": "https://www.facebook.com/Brewsterriverpeeps",
+        "twitter": "https://twitter.com/BrewRiverPub",
+        "googleplus": "",
+        "instagram": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.7933355,
+          44.5911324
+        ]
+      }
+    }
+  ]
+}

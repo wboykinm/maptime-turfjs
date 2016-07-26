@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Leaflet Draw</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" /><style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+<body>
+
+
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.3/leaflet.draw.css' rel='stylesheet' />
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.3/leaflet.draw.js'></script>
+
+<div id='map'></div>
+
+<script>
+  var map = L.map('map')
+      .setView([42.36008, -71.05888], 14);
+      
+  L.tileLayer('http://tile.stamen.com/terrain/{z}/{x}/{y}.jpg', {
+    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.',
+    maxZoom: 18
+  }).addTo(map);
+
+  var featureGroup = L.featureGroup().addTo(map);
+
+  // Define circle options
+  // http://leafletjs.com/reference.html#circle
+  var circle_options = {
+      color: '#fff',      // Stroke color
+      opacity: 1,         // Stroke opacity
+      weight: 10,         // Stroke weight
+      fillColor: '#000',  // Fill color
+      fillOpacity: 0.6    // Fill opacity
+  };
+
+  var circle_one = L.circle([38.89415, -77.03738], 20, circle_options).addTo(featureGroup);
+  var circle_two = L.circle([38.89415, -77.03578], 20, circle_options).addTo(featureGroup);
+
+  // Create array of lat,lon points
+  var line_points = [
+      [38.893596444352134, -77.0381498336792],
+      [38.89337933372204, -77.03792452812195],
+      [38.89316222242831, -77.03761339187622],
+      [38.893028615148424, -77.03731298446655],
+      [38.892920059048464, -77.03691601753235],
+      [38.892903358095296, -77.03637957572937],
+      [38.89301191422077, -77.03592896461487],
+      [38.89316222242831, -77.03549981117249],
+      [38.89340438498248, -77.03514575958252],
+      [38.893596444352134, -77.0349633693695]
+  ];
+
+  // Define polyline options
+  // http://leafletjs.com/reference.html#polyline
+  var polyline_options = {
+      color: '#000'
+  };
+
+  // Defining a polygon here instead of a polyline will connect the
+  // endpoints and fill the path.
+  // http://leafletjs.com/reference.html#polygon
+  var polyline = L.polyline(line_points, polyline_options).addTo(featureGroup);
+
+  var drawControl = new L.Control.Draw({
+    edit: {
+      featureGroup: featureGroup
+    }
+  }).addTo(map);
+
+  map.on('draw:created', function(e) {
+      featureGroup.addLayer(e.layer);
+  });
+</script>
+
+
+</body>
+</html>

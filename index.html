@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Foo</title>
+<meta charset='utf-8' />
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+<style type='text/css'>
+body {
+  font-family: 'Arial Black';
+  background:#1B3357;
+  background-size:100%;
+  color:#83D9BF;
+  margin:0px;
+  padding:0px;
+  font-weight:bold;
+}
+
+h1, h2, h3, p {
+  margin:10px;
+}
+
+em, a {
+  font-style:normal;
+  color:#E9D03D;
+}
+
+a {
+  background: #579FD8;
+  color:#2D518B;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0;
+  left:0;
+  padding-left:25px;
+  padding-right:25px;
+}
+
+</style>
+<script type='text/javascript'>
+window.onload = function() {
+    var s = document.getElementsByTagName('div'), cur = 0, ti;
+    if (!s) return;
+    function go(n) {
+        cur = n;
+        var i = 1e3, e = s[n], t;
+        document.body.className = e.dataset.bodyclass || '';
+        for (var k = 0; k < s.length; k++) s[k].style.display = 'none';
+        e.style.display = 'inline';
+        e.style.fontSize = i + 'px';
+        if (e.firstChild && e.firstChild.nodeName === 'IMG') {
+            document.body.style.backgroundImage = 'url(' + e.firstChild.src + ')';
+            e.firstChild.style.display = 'none';
+            if ('classList' in e) e.classList.add('imageText');
+        } else {
+            document.body.style.backgroundImage = '';
+            document.body.style.backgroundColor = e.style.backgroundColor;
+        }
+        if (ti !== undefined) window.clearInterval(ti);
+        t = parseInt(e.dataset.timeToNext || 0, 10);
+        if (t > 0) ti = window.setTimeout(fwd, (t * 1000));
+        while (
+            e.offsetWidth > window.innerWidth ||
+            e.offsetHeight > window.innerHeight) {
+            e.style.fontSize = (i -= 2) + 'px';
+            if (i < 0) break;
+        }
+        e.style.marginTop = ((window.innerHeight - e.offsetHeight) / 2) + 'px';
+        if (window.location.hash !== n) window.location.hash = n;
+        document.title = e.textContent || e.innerText;
+    }
+    document.onclick = function() { go(++cur % (s.length)); };
+    function fwd() { go(Math.min(s.length - 1, ++cur)); }
+    function rev() { go(Math.max(0, --cur)); }
+    document.onkeydown = function(e) {
+        if (e.which === 39 || e.which === 34 || e.which === 40) fwd();
+        if (e.which === 37 || e.which === 33 || e.which === 38) rev();
+    };
+    document.ontouchstart = function(e) {
+        var x0 = e.changedTouches[0].pageX;
+        document.ontouchend = function(e) {
+            var x1 = e.changedTouches[0].pageX;
+            if (x1 - x0 < 0) fwd();
+            if (x1 - x0 > 0) rev();
+        };
+    };
+    function parse_hash() {
+        return Math.max(Math.min(
+            s.length - 1,
+            parseInt(window.location.hash.substring(1), 10)), 0);
+    }
+    if (window.location.hash) cur = parse_hash() || cur;
+    window.onhashchange = function() {
+        var c = parse_hash();
+        if (c !== cur) go(c);
+    };
+    go(cur);
+};
+</script></head><body>
+<div><p><hr></p>
+<h1 id="maptime-">Maptime!</h1>
+<h3 id="geoprocessing-with-turf-js">Geoprocessing with turf.js</h3>
+<p><hr>
+July 27, 2016</p>
+</div>
+<div><p>Me: Bill Morris </p>
+<ul>
+<li>Cartographer at <a href="http://faraday.io">Faraday Inc</a>
+<hr>
+<img src="https://www.dropbox.com/s/sf87ts86y2h4mog/Screenshot%202016-06-01%2009.43.33.png?dl=1" alt="nola"></li>
+</ul>
+</div>
+<div><p>using <a href="http://turfjs.org/">turf.js</a> for spatial data crunching</p>
+</div>
+<div><p>Plan:</p>
+<ul>
+<li><em>How we got here</em></li>
+<li>Client side geoprocessing</li>
+<li>Server side geoprocessing</li>
+<li>Where next?</li>
+</ul>
+</div>
+<div><p>GIS + the internet: a lightning history</p>
+</div>
+<div><p>1993: Xerox PARC</p>
+</div>
+<div><p><img src="https://pbs.twimg.com/media/CjP7iSwUgAAJ0Ib.jpg" alt="xerox"></p>
+</div>
+<div><p>~2000: </p>
+<ul>
+<li>GeoServer</li>
+<li>ArcIMS
+<img src="http://webhelp.esri.com/arcims/9.3/general/mergedprojects/arcxmlguide/elements/images/config_file_d1.gif" alt="arcims"></li>
+</ul>
+</div>
+<div><p>2004: Complexity increases</p>
+<ul>
+<li>ArcGIS Server</li>
+<li>PostGIS + UMN MapServer</li>
+<li>Others catching on . . .</li>
+</ul>
+</div>
+<div><p>2005: Year G</p>
+<p><img src="http://blogoscoped.com/files/google-museum/48.jpg" alt="goog"></p>
+</div>
+<div><p>[a.k.a. Year of The Tile, a.k.a. The Resurrection of Gerardus]</p>
+</div>
+<div><p>&quot;GIS in the browser&quot;</p>
+<p>2010:</p>
+</div>
+<div><p><img src="https://www.dropbox.com/s/jt77sl10fv1dzkj/Screenshot%202016-05-31%2022.06.17.png?dl=1" alt="gis">
+<em>via <a href="http://www.slideshare.net/dbouwman/usability-in-the-geoweb-presentation/22-most_WebGIS_sites_are">Dave Bouwman</a></em></p>
+</div>
+<div><p><img src="http://images.mentalfloss.com/sites/default/files/styles/insert_main_wide_image/public/giphy.gif" alt="biden"></p>
+</div>
+<div><p>2016: </p>
+<p>It&#39;s actually a thing: </p>
+</div>
+<div><p><img src="https://www.dropbox.com/s/71c9b3yyibimmnm/dropchop1.gif?dl=1" alt="buffer"></p>
+</div>
+<div><p><em><a href="http://dropchop.io/?gist=e1028889229343fa8ed8a6e74d21f5d0">Try it out on the great state of Vermont</a></em></p>
+</div>
+<div><p>Powered by <a href="http://turfjs.org/">turf.js</a></p>
+</div>
+<div><p>A javascript library for live, client-side geoprocessing</p>
+</div>
+<div><p>Instead of this:</p>
+</div>
+<div><p><img src="http://pro.arcgis.com/en/pro-app/help/analysis/geoprocessing/basics/GUID-8C7480F4-4E44-4E9E-89BE-421E823B767C-web.png" alt="arcpro"></p>
+</div>
+<div><p>This:</p>
+</div>
+<div><p><img src="https://www.dropbox.com/s/ggkw3j7q1npp24t/Screenshot%202016-05-31%2017.13.16.png?dl=1" alt="hull"></p>
+</div>
+<div><p>Javascript</p>
+</div>
+<div><p><img src="https://66.media.tumblr.com/3946cce1923abd7bb5e1c5bc16681d6d/tumblr_nwr31xQQLL1thdow0o1_500.gif" alt="afraid"></p>
+</div>
+<div><pre><code>function bidenize() {
+  document.getElementById(&#39;topbar&#39;).innerHTML = &#39;Random Biden quote&#39;
+}
+</code></pre></div>
+<div><p>GeoJSON</p>
+</div>
+<div><p>Looks like this in a text editor:</p>
+<pre><code>{
+  &quot;type&quot;: &quot;Feature&quot;,
+  &quot;properties&quot;: {
+    &quot;marker-color&quot;: &quot;#ab4ca9&quot;,
+    &quot;marker-size&quot;: &quot;large&quot;,
+    &quot;marker-symbol&quot;: &quot;alcohol-shop&quot;,
+    &quot;name&quot;: &quot;Geobeers @ Parlor Sports&quot;
+  },
+  &quot;geometry&quot;: {
+    &quot;type&quot;: &quot;Point&quot;,
+    &quot;coordinates&quot;: [
+      -71.10146641731262,
+      42.374473211292404
+    ]
+  }
+}
+</code></pre></div>
+<div><p>Looks like <a href="http://geojson.io/#id=gist:wboykinm/a63dd6d26cd8feb84623b18f8e5e581c&amp;map=14/42.3715/-71.1038">this</a> in a web browser:</p>
+</div>
+<div><p><img src="https://www.dropbox.com/s/y9r5x9j32i0ig9b/Screenshot%202016-07-25%2023.27.33.png?dl=1" alt="cap"></p>
+</div>
+<div><ul>
+<li>How we got here</li>
+<li><em>Client side geoprocessing</em></li>
+<li>Server side geoprocessing</li>
+<li>Where next?</li>
+</ul>
+</div>
+<div><p>Let&#39;s do a quick project, starting with <a href="http://geojson.io/#map=8/43.930/-72.724">data creation</a>:</p>
+</div>
+<div><p><img src="https://www.dropbox.com/s/gqeza9d01holk84/draw1.gif?dl=1" alt="draw1"></p>
+</div>
+<div><p>Then we <a href="http://dropchop.io/">bring the data over to dropchop</a> and do some basic turf geoprocessing on it:</p>
+</div>
+<div><p><img src="https://www.dropbox.com/s/ffr8zeabo5pulc8/process1.gif?dl=1" alt="process2"></p>
+</div>
+<div><p>Could you spot the server in there?</p>
+</div>
+<div><p>Again, GIS in the web browser. LOL.</p>
+</div>
+<div><p><img src="https://media.giphy.com/media/Kwi0Iu9MxxOgg/giphy.gif" alt="biden2"></p>
+</div>
+<div><p><em>What do end users care about geoprocessing?</em></p>
+</div>
+<div><p>Geoprocessing as part of a layperson&#39;s user experience:</p>
+<ul>
+<li>in support of a task</li>
+<li>telling a story</li>
+</ul>
+</div>
+<div><p>Nearest neighbor: <a href="http://wboykinm.github.io/vcgi-turf-2016/brewswim/">Post-swimming brews</a>
+<img src="https://www.dropbox.com/s/0dq4ima6l3402kw/Screenshot%202016-05-31%2022.52.32.png?dl=1" alt="near"></p>
+</div>
+<div><p>Distance along a line: <a href="http://wboykinm.github.io/midpoint/">Meet me halfway</a>
+<img src="https://www.dropbox.com/s/6359nswwvbkw2iw/Screenshot%202016-05-31%2022.48.35.png?dl=1" alt="distance"></p>
+</div>
+<div><p>Buffering: <a href="https://www.mapbox.com/bites/00082/?embed=true">Race route water fountains</a>
+<img src="https://www.dropbox.com/s/3flhucj3h77etg9/Screenshot%202016-05-31%2022.45.16.png?dl=1" alt="water">
+<em>via <a href="https://twitter.com/morganherlocker">Morgan Herlocker</a></em></p>
+</div>
+<div><ul>
+<li>How we got here</li>
+<li>Client side geoprocessing</li>
+<li><em>Server side geoprocessing</em></li>
+<li>Where next?</li>
+</ul>
+</div>
+<div><p><a href="http://nodejs.org/">node.js</a> is javascript, just built for servers. <em>turf works the same way <a href="https://github.com/mapbox/turf-server-example">when used as a server-side tool</a></em></p>
+</div>
+<div><p>But . . .
+<img src="https://www.dropbox.com/s/g5njqmvgmr2udoj/Screenshot%202016-05-31%2022.16.45.png?dl=1" alt="Data from hell"></p>
+</div>
+<div><p>A more complicated problem, wth bigger data, needs more power than a browser can provide.</p>
+</div>
+<div><p><a href="https://github.com/mapbox/tile-reduce">tile-reduce</a></p>
+</div>
+<div><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Tiled_web_map_Stevage.png/640px-Tiled_web_map_Stevage.png" alt="tiles">
+<em>via <a href="https://en.wikipedia.org/wiki/Tiled_web_map#/media/File:Tiled_web_map_Stevage.png">Stevage</a></em></p>
+</div>
+<div><p><a href="https://www.mapbox.com/blog/updating-map-runkeeper/">Comparing two gigantic datasets</a></p>
+</div>
+<div><p><img src="https://farm1.staticflickr.com/697/20479186309_df83c4d759_b.jpg" alt="run">
+<em>via <a href="https://twitter.com/lxbarth">Alex Barth</a></em></p>
+</div>
+<div><p><a href="https://github.com/morganherlocker/nepal-damage-analysis">A time-sensitive analysis to save lives</a>. . .</p>
+</div>
+<div><p><img src="https://www.dropbox.com/s/fk4b1drr1xcma7q/Screenshot%202016-05-24%2017.10.57.png?dl=1" alt="nepal">
+<em>via <a href="https://twitter.com/morganherlocker">Morgan Herlocker</a></em></p>
+</div>
+<div><ul>
+<li>How we got here</li>
+<li>Client side geoprocessing</li>
+<li>Server side geoprocessing</li>
+<li><em>Where next?</em></li>
+</ul>
+</div>
+<div><p><a href="http://www.fulcrumapp.com/blog/advanced-geospatial-calculations-with-turf/">Offline geoprocessing</a>
+<img src="http://www.fulcrumapp.com/assets/img/blog/turf-js-libs.png" alt="off">
+<em>via <a href="https://twitter.com/brymcbride">Bryan McBride</a></em></p>
+</div>
+<div><p><a href="http://openlayers.org/en/latest/examples/turf.html">Linear referencing</a>
+<img src="https://www.dropbox.com/s/4dsv1ew8vzb249w/Screenshot%202016-05-31%2021.40.39.png?dl=1" alt="ref">
+<em>via <a href="https://twitter.com/tsauerwein">Tobias Sauerwein</a></em></p>
+</div>
+<div><p><a href="https://www.mapbox.com/blog/geofencing-london/">Realtime</a> <a href="https://www.mapbox.com/bites/00223/">geoprocessing</a>
+<img src="https://www.dropbox.com/s/p4yrcusbrj0b532/Screenshot%202016-05-31%2021.42.37.png?dl=1" alt="rt">
+<em>via <a href="https://twitter.com/mollymerp">Molly Lloyd</a></em></p>
+</div>
+<div><p>Resources to get you started:</p>
+<ul>
+<li><a href="https://www.codecademy.com/courses/getting-started-v2/0/1?curriculum_id=506324b3a7dffd00020bf661">javascript</a></li>
+<li><a href="http://nodeschool.io/#workshopper-list">node.js</a></li>
+<li><a href="https://www.mapbox.com/help/analysis-with-turf/">turf.js</a></li>
+<li><a href="http://dropchop.io/">dropchop.io</a></li>
+<li><a href="https://github.com/">github</a></li>
+</ul>
+</div>
+<div><p>Questions? Hit me up:</p>
+<ul>
+<li><a href="mailto:bill@faraday.io">bill@faraday.io</a></li>
+<li><a href="https://twitter.com/vtcraghead">@vtcraghead</a></li>
+</ul>
+</div>

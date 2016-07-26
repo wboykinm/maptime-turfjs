@@ -1,0 +1,157 @@
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Swimming + Breweries in VT</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v2.0.0/turf.min.js'></script>
+<link href='https://fonts.googleapis.com/css?family=Overlock' rel='stylesheet' type='text/css'>
+<style>
+  body { margin:0; padding:0; font-family: 'Overlock', cursive; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+  #footer { position: absolute; bottom: 0; left: 0; right: 0; background: #FDFDF8; z-index: 999; overflow: auto; padding: 5px; opacity: 0.95; color: #555; border-top:1px solid #717733;}
+</style>
+</head>
+<body>
+  <div id='map'></div>
+  <div id="footer">
+    <div class="container" style="padding-left:20px;">
+      <h2>Swimming and refreshment in the Green Mountains</h2>
+      <h4>Find the closest brewery to every swimming hole in Vermont.</h4>
+    </div>
+  </div>
+  <script>
+  
+  L.mapbox.accessToken = 'pk.eyJ1IjoibGFuZHBsYW5uZXIiLCJhIjoicUtlZGgwYyJ9.UFYz8MD4lI4kIzk9bjGFvg';
+  
+  // add geojson files here
+  var files = [
+    'vt_breweries.geojson',
+    'vt_cascades.geojson'
+  ];
+  
+  // import the geojson files for use in the script
+  Promise.all(files.map(
+    (path) => fetch(path).then(result => result.json())
+  )).then(function(json) { 
+      let breweries = json[0];
+      let cascades = json[1];
+
+      // Add marker color, symbol, and size to brewery GeoJSON
+      for(var i = 0; i < breweries.features.length; i++) {
+        breweries.features[i].properties['marker-color'] = '#A77F92';
+        breweries.features[i].properties['marker-symbol'] = 'beer';
+        breweries.features[i].properties['marker-size'] = 'small';
+      };
+
+      // Add marker color, symbol, and size to cascade GeoJSON,
+      // conditional on whether or not it's swimmable
+      for (var i = 0; i < cascades.features.length; i++) {
+        cascades.features[i].properties['marker-size'] = 'small';
+        if (cascades.features[i].properties.SWIM > 0 ) {
+          cascades.features[i].properties['marker-symbol'] = 'swimming';
+          cascades.features[i].properties['marker-color'] = '#564976';
+        }
+        else {
+          cascades.features[i].properties['marker-symbol'] = 'cross';
+          cascades.features[i].properties['marker-color'] = '#E5E3E7';
+        }
+        
+      };
+
+      // build the map
+      var map = L.mapbox.map('map')
+        .addControl(L.mapbox.geocoderControl(
+          'mapbox.places', {
+            keepOpen: true
+          })
+        )
+        .setView([44.02909, -72.70968], 8);
+
+      L.mapbox.styleLayer('mapbox://styles/mapbox/outdoors-v9', {
+        attribution: 'VCGI, VT Brewers Assn'
+      }).addTo(map);
+      
+      var breweryLayer = L.mapbox.featureLayer(breweries)
+        .addTo(map);
+      var cascadeLayer = L.mapbox.featureLayer(cascades)
+        .addTo(map);
+
+      // set the map view to fit the bounding box of the cascades layer
+      map.fitBounds(cascadeLayer.getBounds());
+
+      // Bind a popup to each feature in breweryLayer and cascadeLayer
+      breweryLayer.eachLayer(function (layer) {
+        props = layer.feature.properties;
+        layer.bindPopup(
+          '<strong>' + props.name + '</strong>',
+          { closeButton: false }
+        );
+      }).addTo(map);
+      cascadeLayer.eachLayer(function (layer) {
+        layer.bindPopup(layer.feature.properties.NAME, { closeButton: false });
+      }).addTo(map);
+
+      // Open popups on hover
+      cascadeLayer.on('mouseover', function (e) {
+        e.layer.openPopup();
+      });
+      breweryLayer.on('mouseover', function (e) {
+        e.layer.openPopup();
+      });
+
+    // Reset marker size to small
+      function reset() {
+        var breweryFeatures = breweryLayer.getGeoJSON();
+        for (var i = 0; i < breweryFeatures.features.length; i++) {
+          breweryFeatures.features[i].properties['marker-size'] = 'small';
+        };
+        breweryLayer.setGeoJSON(breweryFeatures);
+      };
+
+      ///////////////////////////////////////////////////////////////////
+      ///////////////////  TURFTURFTURFTURFTURFTURF  ////////////////////
+      ///////////////////////////////////////////////////////////////////
+
+      // When a cascade is clicked, do the following
+      cascadeLayer.on('click', function (e) {
+        // Reset any and all marker sizes to small
+        reset();
+        // Get the GeoJSON from cascadeFeatures and breweryFeatures
+        var cascadeFeatures = cascadeLayer.getGeoJSON();
+        var breweryFeatures = breweryLayer.getGeoJSON();
+        // Using Turf, find the nearest brewery to cascade clicked
+        var nearestbrewery = turf.nearest(e.layer.feature, breweryFeatures);
+        // Change the nearest brewery to a large marker
+        nearestbrewery.properties['marker-size'] = 'large';
+        // Add the new GeoJSON to breweryLayer
+        breweryLayer.setGeoJSON(breweryFeatures);
+        // Bind popups with contact info to new breweryLayer 
+        // and open popup for nearest brewery
+        breweryLayer.eachLayer(function (layer) {
+          props = layer.feature.properties;
+          layer.bindPopup(
+            '<h2>' + props.name + '</h2><p>' + props.address + '<br>' + props.city + ', ' + props.state + ' ' + props.zip + '<br><a href="' + ( props.url || props.facebook ) + '" target="_blank">Website</a></p>', 
+            { closeButton: false }
+          );
+          if (layer.feature.properties['marker-size'] === 'large') {
+            layer.openPopup();
+          };
+        });
+      });
+      
+      ///////////////////////////////////////////////////////////////////
+      ///////////////////  END TURFTURFTURFTURFTURFTURF  ////////////////
+      ///////////////////////////////////////////////////////////////////
+
+      // When the map is clicked on anywhere, reset all
+      // brewery markers to small
+      map.on('click', function (e) {
+        reset();
+      });
+  });
+
+  </script>
+</body>
+</html>

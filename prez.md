@@ -226,6 +226,11 @@ Buffering: [Race route water fountains](https://www.mapbox.com/bites/00082/?embe
 *via [Morgan Herlocker](https://twitter.com/morganherlocker)*
 ---
 
+Intersection and grids: [Neighborhood mapping](https://wboykinm.github.io/maptime-turfjs/neighborhoods/)
+![hoods](https://www.dropbox.com/s/4186m5l40ne0kxx/Screenshot%202016-07-27%2016.40.21.png?dl=1)
+
+---
+
 - How we got here
 - Client side geoprocessing
 - *Server side geoprocessing*

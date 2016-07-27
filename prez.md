@@ -212,7 +212,7 @@ Geoprocessing as part of a layperson's user experience:
 - telling a story
 
 ---
-Nearest neighbor: [Post-swimming brews](http://wboykinm.github.io/vcgi-turf-2016/brewswim/)
+Nearest neighbor: [Post-swimming brews](https://wboykinm.github.io/maptime-turfjs/brewswim/)
 ![near](https://www.dropbox.com/s/0dq4ima6l3402kw/Screenshot%202016-05-31%2022.52.32.png?dl=1)
 
 ---
